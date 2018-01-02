@@ -1,0 +1,14 @@
+{
+  "name": "test_dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "angular.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "t-miess",
+  "license": "ISC",
+  "dependencies": {
+    "angular-material-calendar": "^0.2.14"
+  }
+}

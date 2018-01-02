@@ -1,0 +1,86 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#slideshow {
+    position: relative;
+    height: 350px;
+    z-index: -1;
+}
+
+#slideshow IMG {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    opacity: 0;
+}
+
+#slideshow .active {
+    z-index: 10;
+    opacity: 1.0;
+}
+
+#slideshow .last-active {
+    z-index: 9;
+}
+
+#slideshow img {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 1024px) {
+
+
+    .bg {
+
+        left: 50%;
+
+        margin-left: -512px;
+
+    }
+
+}
+
+#navButtonContent {
+    width: 100%;
+    background: rgba(11, 11, 11, 0.4);
+    padding-top: 550px;
+    padding-bottom: 550px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#docPath {
+    margin-bottom: 15px;
+    height: 80px;
+    width: 400px;
+    padding-top: 25px;
+}
+
+#patPath {
+    height: 80px;
+    width: 400px;
+    padding-top: 25px;
+}
+
+#homePageTitle {
+    margin-left: 3%;
+    font-family: 'Anton', sans-serif;
+    text-shadow: 2px 2px white;
+}

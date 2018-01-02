@@ -1,0 +1,46 @@
+header,
+footer,
+main {
+    padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+    header,
+    main,
+    footer {
+        padding-left: 0;
+    }
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    overflow: auto;
+    height: 550px;
+}
+
+html {
+    font-family: 'Ubuntu',
+    sans-serif;
+}
+
+#hiddenLogo {
+    padding-left: 20px;
+    display: block;
+    margin: auto;
+
+}
+
+#headerLogo {
+    padding: 1px;
+}
+
+font-family: 'Nunito',
+sans-serif;
+font-family: 'Ubuntu',
+sans-serif;

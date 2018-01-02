@@ -1,0 +1,62 @@
+var express = require("express");
+
+var router = express.Router();
+var db = require("../models/");
+var path = require("path");
+// var docId = require("./testlogin/docId");
+
+
+
+
+
+
+router.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "..", "testLogin/login.html"));
+});
+
+
+// router.get("/burgers", function(req, res) {
+//     db.Burger.findAll()
+//         .then(function(allBurgers) {
+//             var hbsObject = { burger: allBurgers };
+//             return res.render("index", hbsObject);
+//         });
+// });
+
+
+router.post("/", function(req, res) {
+    // console.log(req);
+    db.Patient.create({
+        full_name: req.body.full_name,
+        pat_email: req.body.pat_email,
+        gender: req.body.gender,
+        reason: req.body.visit_reason,
+        pat_uid: req.body.doc_uid
+    }).then(function(newPatient) {
+        res.sendFile(path.join(__dirname, "..", "./testDashboard/dashboard.html"));
+    });
+});
+
+
+// router.put("/burgers/update/:id", function(req, res) {
+//     db.Burger.update({
+//         devoured: true
+//     }, {
+//         where: {
+//             id: req.params.id
+//         }
+//     }).then(function(devourBurger) {
+//         res.json("/");
+//     });
+// });
+
+// router.post("/burgers", function(req, res) {
+//     db.Burger.destroy()
+//         .then(function(allBurgers) {
+//             var hbsObject = { burger: allBurgers };
+//             return res.render("index", hbsObject);
+//         });
+
+// });
+
+module.exports = router;

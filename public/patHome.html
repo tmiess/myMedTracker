@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich|Dhurjati|Gruppo|Homenaje|Nunito|Prosto+One|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+    <!--links for angular calendar-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <link href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
+    <script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
+    <script src="angular.js"></script>
+    <script src="./assets/js/auth.js" type="text/javascript"></script>
+
+    <!--links for the angular chat including connection to firebase-->
+    <script>
+        // Initialize Firebase
+        var patConfig = {
+            apiKey: "AIzaSyA_O9wyyn23uCxJs2MT8UgG3S3yEs4JSmU",
+            authDomain: "patient-login.firebaseapp.com",
+            databaseURL: "https://patient-login.firebaseio.com",
+            projectId: "patient-login",
+            storageBucket: "patient-login.appspot.com",
+            messagingSenderId: "8215542957"
+        };
+        var patConfig = firebase.initializeApp(patConfig, "patient");
+    </script>
+    <!--<link media="all" type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation-flex.min.css">-->
+
+    <!--loads the calendar html file-->
+    <script>
+        $(function() {
+            $("#test2").load("calendar.html");
+            $("#test3").load("chat.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--banner-->
+    <header>
+        <nav class="nav-extended pink darken-4">
+            <div class="nav-wrapper row">
+                <div class="col s.5">
+                    <a href="#" data-activates="slide-out" class="button-collapse hide-on-large left"><i class="material-icons">menu</i></a>
+                </div>
+                <div class="col s.5" style="padding-top: 20px"> <span class="brand-logo hide-on-small-only"><img src="images/medTrackerFullLogoFinal1.svg" alt="medTrackerLogo" id="headerLogo" style="width:500px;height:auto"></span>
+                </div>
+                <!--<div class="col s11">-->
+                <!--    <i style="font-size: 70px" class="material-icons hide-on-med-and-up center" id="headerLogo">local_hospital</i>-->
+                <!--</div>-->
+                <div class="col s11">
+                    <img class="hide-on-med-and-up center" src="images/medTrackerAppLogoFinal1.svg" alt="medTrackerLogo" id="hiddenLogo" style="width:150px;height:auto"> </div>
+            </div>
+
+            <br class="hide-on-small-only">
+
+            <!--tabs to control patients/calendar/chat view-->
+            <div class="row">
+                <div class="col s12">
+
+                    <ul class="tabs tabs-transparent">
+                        <li class="tab"><a class="active" href="#test1">My Record</a>
+                        </li>
+                        <li class="tab"><a class="active" href="#test2">Calendar</a>
+                        </li>
+                        <li class="tab"><a class="active" href="#test3">Chat</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--sideNav to control personal info, settings, see information like help-->
+    <ul id="slide-out" class="side-nav fixed pink darken-2">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <!--<img src="https://3fee7a1sld751eqrjr3a035t-wpengine.netdna-ssl.com/wp-content/uploads/2016/02/Evolution-of-Medical-Device-Software-Development.jpg ">-->
+                </div>
+                <a href="#!user"><img class="circle" src="https://media.istockphoto.com/photos/portrait-of-doctor-working-at-nurses-station-picture-id465354521?k=6&m=465354521&s=612x612&w=0&h=xfBNNIXMm_nZmNr6II5RpmmpKHagwBJk1O0BqWZvjJc="></a>
+                <a href="#!name"><span class="white-text name">John Doe</span></a>
+                <a href="#!email"><span class="white-text email">jd@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a class="waves-effect white-text" href="#!"><i class="material-icons">portrait</i>Account</a></li>
+        <li><a class="waves-effect white-text" href="#!"><i class="material-icons">settings_applications</i>Settings</a></li>
+        <li><a class="waves-effect white-text" href="#!"><i class="material-icons">help</i>Help</a></li>
+        <li><a class="waves-effect white-text" href="#!"><i class="material-icons">subdirectory_arrow_left</i>Sign Out</a></li>
+    </ul>
+
+    <main class="blue-grey lighten-5">
+
+        <!--tab content goes here-->
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div id="test1">
+                        <!--patient info here-->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Birthday</th>
+                                    <th>Gender</th>
+                                    <th>Reason for Visit</th>
+                                    <th>History</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Test Patient</td>
+                                    <td>Test Birthday</td>
+                                    <td>Test Gender</td>
+                                    <td>Test Reason for Visit</td>
+                                    <td>Test History</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--calendar here-->
+                    <div id="test2">
+                    </div>
+                    <div id="test3">
+                        <!--chat here-->
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <!--footer to see information about our company, our references, general information-->
+    <footer class="page-footer fixed pink darken-4">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 MedTracker 1.0.0
+                <a class="grey-text text-lighten-4 right" href="#!">Learn More</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(function() {
+
+            $('ul.tabs').tabs('select_tab', 'test1');
+            $('.button-collapse').sideNav('show');
+            $(".button-collapse ").sideNav();
+            // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+            //$('.collapsible').collapsible();
+        });
+    </script>
+
+</body>
+
+</html>

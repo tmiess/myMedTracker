@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/homeSlideShow.css">
+
+</head>
+
+<body>
+  <h1 id="homePageTitle">MedTracker</h1>
+
+  <div class="row">
+    <div class="center" id="navButtonContent">
+      <div class="col s12 m12 l6">
+        <a href="#docLoginModal" class="waves-effect waves-light btn modal-trigger" id="docPath">Doctor Login</a><br>
+      </div>
+      <div class="col s12 m12 l6">
+        <a href="#patLoginModal" class="waves-effect waves-light btn modal-trigger" id="patPath">Patient Login</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="slideshow">
+    <img class="active" src="http://182.18.175.232/~theothersong/clinic/wp-content/uploads/2016/09/team-of-doctors.jpg" alt="Slideshow Image 1">
+    <img src="http://static1.squarespace.com/static/53c44895e4b053fc7d14630f/t/549862dbe4b0af001f2f8de9/1419272942428/doctor-at-computer-3.jpg?format=1500w" alt="Slideshow Image 2">
+    <img src="http://d3n8a8pro7vhmx.cloudfront.net/doctorpatientalliance/pages/1/features/original/DoctorPatient1170x700.png?1494902780" alt="Slideshow Image 3">
+    <img src="http://www.healthworks.my/wp-content/uploads/2014/05/doctor.jpg" alt="Slideshow Image 4">
+  </div>
+
+  <!-- Begin Doctor Login Modal -->
+  <div id="docLoginModal" class="modal">
+    <div class="modal-content">
+      <h4>Doctor Login or Register</h4>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="docEmail" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="docPassword" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="docHome.html" id="docLogin" class=" modal-action modal-close waves-effect waves-green btn-flat">Login</a>
+      <a href="#docForm" class="modal-action modal-close waves-effect waves-green btn-flat modal-trigger">Register</a>
+    </div>
+  </div>
+  <!-- Doctor Registration Modal -->
+  <div id="docForm" class="modal">
+    <div class="modal-content">
+      <h4>Doctor Registration</h4>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="newDocEmail" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="newDocPassword" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="#docNextStep" id="docRegister" class="modal-action modal-close waves-effect waves-green btn-flat modal-trigger">Submit</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="docNextStep" class="modal">
+    <div class="modal-content">
+      <h4>Next Steps</h4>
+      <p>We just need your full name for verification purposes.</p>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="docFullName" type="text" class="validate">
+              <label for="fullName">Full Name</label>
+            </div>
+          </div>
+          <div class="row" style="display: none;">
+            <div class="input-field col s12 active">
+              <input id="docFormEmail" type="email" class="validate">
+              <label class="active" for="docFormEmail">Email</label>
+            </div>
+          </div>
+          <!-- Style is display none because client does not need to do anything but data still needs to populate to be pushed to table-->
+          <div class="row" style="display: none;">
+            <div class="input-field col s12">
+              <input id="docFormId" type="password" class="validate">
+              <label for="docFormId">ID Number</label>
+            </div>
+            <div class="row">
+              <p>ID Number: <span id="UID"></span></p>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="docHome.html" id="docFormSubmit" class="modal-action modal-close waves-effect waves-green btn-flat">Complete Registration</a>
+      </div>
+    </div>
+  </div>
+  <!-- End Doctor Login/Registration Modals-->
+
+  <!-- Begin Patient Login Modal -->
+  <div id="patLoginModal" class="modal">
+    <div class="modal-content">
+      <h4>Patient Login or Register</h4>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="patEmail" type="email" class="validate">
+              <label for="patEmail">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="patPassword" type="password" class="validate">
+              <label for="patPassword">Password</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="patHome.html" id="patLogin" class=" modal-action modal-close waves-effect waves-green btn-flat">Login</a>
+      <a href="#patRegister" id="patSubmit" class=" modal-action modal-close waves-effect waves-green btn-flat modal-trigger">Register</a>
+    </div>
+  </div>
+
+  <!-- Patient Registration Modal -->
+  <div id="patRegister" class="modal">
+    <div class="modal-content">
+      <h4>Patient Registration</h4>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="newPatEmail" type="email" class="validate">
+              <label for="newPatEmail">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="newPatPassword" type="password" class="validate">
+              <label for="newPatPassword">Password</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#patFormModal" id="patRegistration" class=" modal-action modal-close waves-effect waves-green btn-flat modal-trigger">Submit</a>
+    </div>
+  </div>
+
+  <!-- Patient form Modal -->
+  <div id="patFormModal" class="modal">
+    <div class="modal-content">
+      <h4>Patient Medical History</h4>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="newPatFullName" type="text" class="validate">
+              <label for="newPatFullName">Full Name</label>
+            </div>
+          </div>
+          <div class="row" style="display: none;">
+            <div class="input-field col s12 active">
+              <input id="patFormEmail" type="email" class="validate">
+              <label id="patFormLabel" for="patFormEmail">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text" id="bday" class="datepicker">
+              <label>Birthday</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <form action="#">
+                <p>
+                  <input type="radio" name="gender" id="male" value="male" />
+                  <label for="male">Male</label>
+                </p>
+                <p>
+                  <input type="radio" name="gender" id="female" value="female" />
+                  <label for="female">Female</label>
+                </p>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="newPatReason" type="text" class="validate">
+              <label for="newPatReason">Reason for visit</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <select id="docSelect">
+
+              </select>
+              <label>Choose Your Doctor</label>
+            </div>
+          </div>
+          <!-- Style is display none because client does not need to do anything but data still needs to populate to be pushed to table-->
+          <div class="row" style="display: none;">
+            <div class="input-field col s12">
+              <input id="patFormId" type="password" class="validate">
+              <label for="Id">ID Number</label>
+            </div>
+            <p>ID Number: <span id="patUID"></span></p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="patHome.html" id="patFormSubmit" class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+      </div>
+    </div>
+  </div>
+  <!--<button id="signOut" class="waves-effect waves-green btn-flat">Sign Out</button>-->
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <!--<script src="./assets/js/login.js" type="text/javascript"></script>-->
+  <script src="./assets/js/docLogin.js" type="text/javascript"></script>
+  <script src="./assets/js/patLogin.js" type="text/javascript"></script>
+  <script src="./assets/js/home.js" type="text/javascript"></script>
+  <script src="./assets/js/auth.js" type="text/javascript"></script>
+</body>
+
+</html>
