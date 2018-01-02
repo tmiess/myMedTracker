@@ -1,5 +1,5 @@
 -- Comment
-DROP DATABASE IF EXISTS medtracker;
-CREATE database medtracker;
+DROP DATABASE IF EXISTS mymedtracker;
+CREATE database mymedtracker;
 
-USE medtracker;
+USE mymedtracker;
