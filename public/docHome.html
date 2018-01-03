@@ -205,6 +205,14 @@
             $(".button-collapse ").sideNav();
             // Initialize collapsible (uncomment the line below if you use the dropdown variation)
             //$('.collapsible').collapsible();
+            $("#sendToChat").on("click", function(event) {
+                event.preventDefault();
+                var content = $("#message").val();
+                $("#message").val('');
+                console.log("button working");
+                console.log("content: " + content);
+                $("#chat").prepend("Dr. John Doe: " + content + "&#13;");
+            });
         });
     </script>
 
