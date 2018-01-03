@@ -19,7 +19,8 @@
     <link href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
     <script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
     <script src="angular.js"></script>
-    <script src="./assets/js/auth.js" type="text/javascript"></script>
+    <script src="./assets/js/docAuth.js" type="text/javascript"></script>
+    <script src="./assets/js/docHome.js" type="text/javascript"></script>
 
     <!--links for the angular chat including connection to firebase-->
     <script>
@@ -39,10 +40,10 @@
 
     <!--loads the calendar html file-->
     <script>
-        $(function() {
-            $("#test2").load("calendar.html");
-            $("#test3").load("chat.html");
-        });
+        // $(function() {
+        //     $("#test2").load("calendar.html");
+        //     $("#test3").load("chat.html");
+        // });
     </script>
 </head>
 
@@ -113,104 +114,47 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Patient Info</th>
-                                    <th>Patient Info</th>
-                                    <th>Patient Info</th>
-                                    <th>Patient Info</th>
+                                    <th>Email</th>
+                                    <th>Birthday</th>
+                                    <th>Gender</th>
+                                    <th>Visit Reason</th>
                                 </tr>
                             </thead>
-
-                            <tbody>
+                            <tbody id="patientData">
                                 <tr>
-                                    <td>Alvin</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
+                                    <td>Joe Knows</td>
+                                    <td>JoeKnows@gmail.com</td>
+                                    <td>December 7th, 1950</td>
+                                    <td>Male</td>
+                                    <td>Need some water</td>
                                 </tr>
                                 <tr>
-                                    <td>Alan</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
+                                    <td>Shaun Bens</td>
+                                    <td>BensShaun@gmail.com</td>
+                                    <td>July 30th, 1988</td>
+                                    <td>Male</td>
+                                    <td>Balloon flew away</td>
                                 </tr>
                                 <tr>
-                                    <td>Jonathan</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
+                                    <td>Tyler Miess</td>
+                                    <td>tMiess@gmail.com</td>
+                                    <td></td>
+                                    <td>Male</td>
+                                    <td>Lost my pop-socket</td>
                                 </tr>
                                 <tr>
-                                    <td>Alvin</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
+                                    <td>Dimitri Kontos</td>
+                                    <td>ckontos@rocketmail.com</td>
+                                    <td></td>
+                                    <td>Male</td>
+                                    <td>My iPhone is broken</td>
                                 </tr>
                                 <tr>
-                                    <td>Alan</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                                <tr>
-                                    <td>Alvin</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                                <tr>
-                                    <td>Alan</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                                <tr>
-                                    <td>Alan</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                                <tr>
-                                    <td>Alan</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
-                                    <td>Info</td>
+                                    <td>Tyler Johnson</td>
+                                    <td>Johntg5@gmail.com</td>
+                                    <td></td>
+                                    <td>Male</td>
+                                    <td>I'd like to switch to Mac</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -219,6 +163,24 @@
                     <div id="test2">
                     </div>
                     <div id="test3">
+                        <div class="row">
+                            <div class="col s12 center-align">
+
+                                <p>Signed in as Dr. John Doe</p>
+                                <div class="input-field">
+                                    <input type="text" name="message" placeholder="Chat here..." id="message" style="height: 10px; width: 100%" />
+                                </div>
+
+                                <button class="btn pink darken-4" id="sendToChat">Send</button>
+
+                                <textarea rows="10" name="char" class="materialize-textarea" id="chat" style="height: 200px"></textarea>
+                                <!--<div class="chat-container">-->
+                                <!--    <a href="#">John Doe</a>-->
+
+                                <!--    <p></p>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
                         <!--chat here-->
                     </div>
                 </div>
