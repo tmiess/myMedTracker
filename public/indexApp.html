@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <style type="text/css">
+        #log {
+            height: 250px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="input-field col s12">
+                <ul class="collection" id="log"> </ul>
+            </div>
+            <div class="input-field col s12">
+                <input placeholder="Your message here..." id="message" type="text" class="validate">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="node_modules/chat-engine/dist/chat-engine.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

@@ -15,12 +15,10 @@
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
     <!--links for angular calendar-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-    <link href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
-    <script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
-    <script src="angular.js"></script>
-    <script src="./assets/js/docAuth.js" type="text/javascript"></script>
-    <script src="./assets/js/docHome.js" type="text/javascript"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>-->
+    <!--<link href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">-->
+    <!--<script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>-->
+    <!--<script src="angular.js"></script>-->
 
     <!--links for the angular chat including connection to firebase-->
     <script>
@@ -40,10 +38,10 @@
 
     <!--loads the calendar html file-->
     <script>
-        // $(function() {
-        //     $("#test2").load("calendar.html");
-        //     $("#test3").load("chat.html");
-        // });
+        $(function() {
+            $("#test2").load("calendar.html");
+            $("#test3").load("indexApp.html");
+        });
     </script>
 </head>
 
@@ -205,14 +203,14 @@
             $(".button-collapse ").sideNav();
             // Initialize collapsible (uncomment the line below if you use the dropdown variation)
             //$('.collapsible').collapsible();
-            $("#sendToChat").on("click", function(event) {
-                event.preventDefault();
-                var content = $("#message").val();
-                $("#message").val('');
-                console.log("button working");
-                console.log("content: " + content);
-                $("#chat").prepend("Dr. John Doe: " + content + "&#13;");
-            });
+            // $("#sendToChat").on("click", function(event) {
+            //     event.preventDefault();
+            //     var content = $("#message").val();
+            //     $("#message").val('');
+            //     console.log("button working");
+            //     console.log("content: " + content);
+            //     $("#chat").prepend("Dr. John Doe: " + content + "&#13;");
+            // });
         });
     </script>
 
