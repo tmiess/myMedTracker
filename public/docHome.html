@@ -39,8 +39,12 @@
     <!--loads the calendar html file-->
     <script>
         $(function() {
-            $("#test2").load("calendar.html");
-            $("#test3").load("indexApp.html");
+            $("#test2").load("calendar.html", function() {
+                console.log("calendar connected");
+            });
+            $("#test3").load("indexApp.html", function() {
+                console.log("chat connected");
+            });
         });
     </script>
 </head>
@@ -201,16 +205,6 @@
             $('ul.tabs').tabs('select_tab', 'test1');
             $('.button-collapse').sideNav('show');
             $(".button-collapse ").sideNav();
-            // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-            //$('.collapsible').collapsible();
-            // $("#sendToChat").on("click", function(event) {
-            //     event.preventDefault();
-            //     var content = $("#message").val();
-            //     $("#message").val('');
-            //     console.log("button working");
-            //     console.log("content: " + content);
-            //     $("#chat").prepend("Dr. John Doe: " + content + "&#13;");
-            // });
         });
     </script>
 
