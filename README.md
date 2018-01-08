@@ -1,3 +1,3 @@
 # MedTracker
 
-final update has not yet been pushed to heroku
+final update for chat has not yet been pushed to heroku
