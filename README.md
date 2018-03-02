@@ -5,8 +5,8 @@
 # Jump To
 - [Demo](#demo)
 - [Getting Started](#getting-started)
-  -[Prerequisites](#prerequisites)
-  -[Installing](#installing)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
 - [Demo Guide](#demo-guide)
   - [Introduction](#introduction)
   - [Responsiveness](#responsiveness)
